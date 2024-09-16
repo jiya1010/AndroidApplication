@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.androidapplication.domain.GetUserUseCase
 import com.example.androidapplication.domain.User
+import com.example.androidapplication.domain.UserResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,8 +16,8 @@ class UserViewModel @Inject constructor(
     private val getUserUseCase: GetUserUseCase
 ) : ViewModel() {
 
-    private val _user = MutableLiveData<User>()
-    val user: LiveData<User> get() = _user
+    private val _user = MutableLiveData<UserResponse>()
+    val user: LiveData<UserResponse> get() = _user
 
     fun loginUser(userRequest:User) {
         viewModelScope.launch {

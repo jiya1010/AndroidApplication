@@ -5,7 +5,7 @@ import javax.inject.Inject
 class GetUserUseCase @Inject constructor(
     private val userRepository: UserRepository
 ) {
-    suspend operator fun invoke(userRequest:User): User {
+    suspend operator fun invoke(userRequest:User): UserResponse {
         return userRepository.loginUser(userRequest)
     }
 }
