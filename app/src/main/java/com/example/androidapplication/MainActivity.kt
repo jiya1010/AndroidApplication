@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         userViewModel.user.observe(this) {
             Log.wtf("observer","$it")
             Constants.userKey=it.keypass
+            startActivity(Intent(this,DashboardScreen::class.java))
+            finish()
 
         }
     }
